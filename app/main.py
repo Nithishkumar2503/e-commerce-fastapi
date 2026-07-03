@@ -9,6 +9,10 @@ def read_root():
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: str | None = None):
+<<<<<<< HEAD
     return {"item_id": item_id, "q": q}
 
     
+=======
+    return {"item_id": item_id, "q": q}
+>>>>>>> d53a5f1 (fastapi-structure)
