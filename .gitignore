@@ -1,4 +1,13 @@
-venv/
-__pycache__/
-*.pyc
+
+# dependencies
+node_modules
+.pnp
+.pnp.js
+venv
 .env
+vscode
+__pycache__/
+app/__pycache__/
+
+*.py[cod]
+.vscode

@@ -1,14 +1,20 @@
 from fastapi import FastAPI
+import logging
+from app.api.brands import router as brand_router
 
-app = FastAPI()
+app = FastAPI(
+    title="E-Commerce API",
+    description="Backend API for E-commerce platform.",
+    version="1.0.0",
+)
+
+# Configure logging
+logger = logging.getLogger(__name__)
 
 
 @app.get("/")
-def read_root():
-    return {"Hello": "World"}
+def root():
+    return {"message": "Welcome to E-Commerce API"}
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str | None = None):
-    return {"item_id": item_id, "q": q}
 
-    
+app.include_router(brand_router)
